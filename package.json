@@ -1,14 +1,14 @@
 {
   "name": "proyecto",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aplicación Node.js para gestión de productos usando API FakeStore",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start" : "node index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["nodejs", "api", "fakestore"],
+  "author": "Miguel Arrondo",
   "license": "ISC",
 
   "type": "module"
