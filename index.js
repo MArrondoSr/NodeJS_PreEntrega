@@ -160,3 +160,8 @@ else {
     console.log("Comando no reconocido.");
 }
 
+//Ejemplos de consultas por consola: 
+// npm run start GET products
+//npm run start GET products/10
+//npm run start POST products Giradiscos 350000 electronica
+//npm run start DELETE products/12
