@@ -3,11 +3,20 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import cors from 'cors';
 import filmsRoutes from './routes/films.routes.js';
+import authRouter from './routes/auth.routes.js'; 
+import { authentication } from './middlewares/authentication.js';
+import bodyParser from 'body-parser';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
 
+app.use(bodyParser.json()); 
+// Routers 
+app.use('/auth', authRouter);
+
+app.use('/api/films', authentication, filmsRoutes);
 
 //Middleware global
 app.use(cors());
@@ -35,7 +44,7 @@ app.use(express.json());
 //Archivos estáticos
 app.use(express.static(join(__dirname, 'public')));
 
-app.use('/films', filmsRoutes);
+app.use('api/films', filmsRoutes);
 
 
 
